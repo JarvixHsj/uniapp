@@ -1,0 +1,23 @@
+
+.btn {
+	position: fixed;
+	right: 32rpx;
+	top: 110rpx;
+	width: 138rpx;
+	height: 64rpx;
+	opacity: 1;
+	background: rgba(0,0,0,0.40);
+	border-radius: 46rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	color: #FFFFFF;
+	font-size: 26rpx;
+}
+

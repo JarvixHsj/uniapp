@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/Activity",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/login/loginPassword",
+    "pages/login/forget",
+    "pages/login/register",
+    "pages/index/store",
+    "pages/index/circle",
+    "pages/index/car",
+    "pages/index/my"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#323233",
+    "selectedColor": "#EB1B34",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/image/ic_tabar_home_n@2x.png",
+        "selectedIconPath": "static/image/ic_tabar_home_n_1@2x.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index/store",
+        "iconPath": "static/image/ic_tabar_shop_n@2x.png",
+        "selectedIconPath": "static/image/ic_tabar_shop_s@2x.png",
+        "text": "门店"
+      },
+      {
+        "pagePath": "pages/index/circle",
+        "iconPath": "static/image/ic_tabar_circle_n@2x.png",
+        "selectedIconPath": "static/image/ic_tabar_circle_s@2x.png",
+        "text": "圈子"
+      },
+      {
+        "pagePath": "pages/index/car",
+        "iconPath": "static/image/ic_tabar_cart_n@2x.png",
+        "selectedIconPath": "static/image/4@2x.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/index/my",
+        "iconPath": "static/image/ic_tabar_my_n@2x.png",
+        "selectedIconPath": "./static/image/5@2x.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

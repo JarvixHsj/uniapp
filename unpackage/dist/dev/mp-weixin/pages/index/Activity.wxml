@@ -1,0 +1,1 @@
+<view><image style="width:100vw;height:99vh;" src="../../static/shanchu/Rectangle.png" mode></image><view data-event-opts="{{[['tap',[['getIndex',['$event']]]]]}}" class="btn" bindtap="__e"><text style="margin-right:8rpx;">{{time+"s"}}</text>跳过</view></view>
