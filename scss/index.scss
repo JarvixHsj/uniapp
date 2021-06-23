@@ -80,3 +80,12 @@
     -ms-flex-pack: justify;
     justify-content: space-around;
 }
+
+// 每一个商品放在的容器盒子里面的样式
+.article_conent {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

@@ -20,7 +20,7 @@
 			</view>
 		</view>
 		<!-- 搜索 -->
-		<view class="search">
+		<view class="search" @click="searchIndex">
 			<image :src="imageUrl + 'ic-search.png'" mode="" style="width: 32rpx; height: 32rpx;margin-right: 8rpx;">
 			</image>
 			<text style="color: #969799; opacity: 0.8; font-size: 28rpx;">搜索商品</text>
@@ -147,8 +147,8 @@
 			<text style="color: #323233; font-size: 32rpx; font-weight: 700;">好物推荐</text>
 			<text style="color: #969799; font-size: 24rpx; margin-left: 16rpx;">为你专属</text>
 		</view>
-		<view class="article_conent">
-			<view class="article_conent_list">
+		<view>
+			<!-- <view class="article_conent_list">
 				<image :src="imageUrl +'Rectangle 2372.png'" mode="" style="width: 334rpx; height: 334rpx;"></image>
 				<view class="article_conent_list_base">
 					<view class="article_conent_list_base_t">
@@ -175,13 +175,15 @@
 						¥368.90
 					</view>
 				</view>
-			</view>
+			</view> -->
+			<good-item :goodData="goodData"></good-item>
 		</view>
 	</view>
 </template>
 
 <script>
 	import app from '../../App.vue'
+	import GoodItem from '../../components/GoodItem'
 	export default {
 		data() {
 			return {
@@ -201,8 +203,42 @@
 					{
 						image: 'https://cdn.uviewui.com/uview/swiper/2.jpg',
 					}
-				]
+				],
+				goodData:[
+                {
+                    image:"Rectangle 2372.png",
+                    title:"YSL圣罗兰年春夏 女士 夹克刺绣丝绒",
+                    price:"288.90",
+                    hadsale:"256",
+                    originalPrice:""
+                },
+				{
+                    image:"Rectangle 2372.png",
+                    title:"YSL圣罗兰年春夏 女士 夹克刺绣丝绒",
+                    price:"288.90",
+                    hadsale:"256",
+                    originalPrice:""
+                },
+				{
+                    image:"Rectangle 2372.png",
+                    title:"YSL圣罗兰年春夏 女士 夹克刺绣丝绒",
+                    price:"288.90",
+                    hadsale:"256",
+                    originalPrice:""
+                },
+				{
+                    image:"Rectangle 2372.png",
+                    title:"YSL圣罗兰年春夏 女士 夹克刺绣丝绒",
+                    price:"288.90",
+                    hadsale:"256",
+                    originalPrice:""
+                }
+
+            ]
 			}
+		},
+		components:{
+			GoodItem,
 		},
 		onLoad() {
 
@@ -219,6 +255,11 @@
 				let that = this;
 				that.state = i;
 			},
+			searchIndex(){
+				uni.navigateTo({
+					url:'../search/search'
+				})
+			}
 		}
 	}
 </script>
@@ -531,13 +572,7 @@
 		margin-top: 40rpx;
 		margin-bottom: 24rpx;
 	}
-	.article_conent {
-		width: 100%;
-		display: flex;
-		align-items: center;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
+
 	.article_conent_list {
 		width: 334rpx;
 		height: 531rpx;

@@ -12,7 +12,7 @@
 		}, {
 			"path": "pages/login/login",
 			"style": {
-				"navigationBarTitleText": "tetx",
+				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
 			}
 		},
@@ -30,8 +30,24 @@
 				"enablePullDownRefresh": true
 			}
 
-		}
-	    ,{
+		},
+		{
+			"path": "pages/search/search",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": true
+			}
+
+		},
+		{
+			"path": "pages/search/searchResult",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": true
+			}
+
+		},
+		{
             "path" : "pages/login/loginPassword",
             "style" :                                                                                    
             {
