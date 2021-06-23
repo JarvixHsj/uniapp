@@ -12,11 +12,18 @@
 		}, {
 			"path": "pages/login/login",
 			"style": {
+				"navigationBarTitleText": "tetx",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/login/wechatLogin",
+			"style": {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
 			}
-
-		}, {
+		},
+		 {
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "",
@@ -100,7 +107,6 @@
             "style" :                                                                                    
             {
                 "navigationStyle": "custom" ,
-				"navigationBarTextStyle": "white",
                 "enablePullDownRefresh": false
             }
 		}

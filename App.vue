@@ -28,4 +28,7 @@
 	uni-page-head {
 		display: none !important;
 	}
+	    /deep/.u-border-bottom:after{
+    border: 0;
+}
 </style>
