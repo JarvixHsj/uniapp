@@ -9,10 +9,13 @@
             <u-sticky>
 			<!-- 只能有一个根元素 -->
                 <view class="sticky">
-                    <view class="flex flex-justify-between tapswiper" >
-                            <view v-for="(item,index) in list" :key="index" >
+                    <view class="sticky flex flex-justify-between tapswiper" >
+                            <view v-for="(item,index) in list" :key="index"  :class=" index == 2 || index == 3 ? 'flex' :'' ">
                                 {{item}}
-                                <view style="width:24rpx;height:24rpx;margin-left:8rpx" v-if="index == 3">
+                                <view style="width:24rpx;height:24rpx;margin-left:8rpx" v-if="index == 2">
+                                    <u-image width="100%" height="100%" src="../../static/image/index/ic_screening_n@3x.png"></u-image>
+                                </view>
+                                <view style="width:24rpx;height:24rpx;margin-left:8rpx" v-if="index == 3" @click="screening">
                                     <u-image width="100%" height="100%" src="../../static/image/index/ic_filter@2x.png"></u-image>
                                 </view>
                             <!-- </view> -->
@@ -23,7 +26,31 @@
              </view>
         <view class="search-result">
                 <good-item :goodData="goodData"></good-item> 
-        </view>     
+        </view>
+        <u-popup v-model="sceShow" mode="right" width="90%" border-radius="40">
+            <view class="popup-box">
+                <view class="hot-search search-box">
+                    <view class="search-box-title">一级分类</view>
+                    <view class="flex historyData flex-wrap flex-justify-between">
+                        <view v-for="item in historyData" :key="item.id" class="historyItem" style="margin:10rpx">
+                            {{item.name}}
+                        </view>
+                    </view>
+                </view>
+                <view class="hot-search search-box">
+                    <view class="search-box-title">二级分类</view>
+                    <view class="flex historyData flex-wrap flex-justify-between">
+                        <view v-for="item in historyData" :key="item.id" class="historyItem" style="margin:10rpx">
+                            {{item.name}}
+                        </view>
+                    </view>
+                </view>
+                <view class="hot-search search-box">
+                    <view class="search-box-title">价格区间(元)</view>
+                    
+                </view>
+            </view>
+        </u-popup>     
     </view>
 </template>
 <script>
@@ -68,15 +95,27 @@ export default {
                     hadsale:"256",
                     originalPrice:"368.90"
                 },
-            ]
+            ],
+            sceShow:false,
+            historyData:[
+                {id:1,name:'名创优品'},
+                {id:2,name:'名创优品'},
+                {id:3,name:'名创优品'},
+                {id:4,name:'名创优品'},
+                {id:5,name:'名创优品'},
+                {id:6,name:'名创优品'}
+            ],
         }
     },
     components:{
 			GoodItem,
 		},
-    method:{
+    methods:{
         toSearch(){
             
+        },
+        screening(){
+            this.sceShow = true
         }
     }
 }
@@ -90,6 +129,9 @@ export default {
         flex: 1; 
         padding: 0 30rpx; 
     }
+    .sticky{
+        background:#fff;
+    }
     .tapswiper{
         font-size: 26rpx;
         color:#323233;
@@ -100,5 +142,33 @@ export default {
         margin: 24rpx 32rpx;
     }
      
+}
+.popup-box{
+    margin: 32rpx;
+    margin-top:108rpx;
+    height: calc(100% - 64rpx);
+    .search-box{
+        margin: 32rpx;
+        .search-box-title{
+            font-weight: 500;
+        }
+        .delbox{
+            width: 32rpx;
+            height: 32rpx;
+        }
+        .historyData{
+            margin: 34rpx 0rpx;
+            .historyItem{
+                margin: 10rpx 32rpx 10rpx 0rpx;
+                font-size: 24rpx;
+                padding: 10rpx 16rpx;
+                border-radius: 12px;
+                opacity: 1;
+                background: rgba(247,248,250,1);
+                color: rgba(100,101,102,1)
+            }
+        }
+        
+    }
 }
 </style>
