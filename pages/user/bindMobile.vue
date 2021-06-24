@@ -3,12 +3,11 @@
        <u-navbar  title="设置" title-size="28" back-icon-size="28">
        </u-navbar>
        <view class="info">
-           <view class="flex flex-justify-between flex-align-center infoItem" @click="tobindMobile">
+           <view class="flex flex-justify-between flex-align-center infoItem">
                <view>手机号</view>
-               <view class="flex flex-align-center"  >
+               <view class="flex flex-align-center">
                    <view>
-                       {{value}}
-                       <!-- <u-input v-model="" type="text" input-align="right"  placeholder="请输入昵称" disabled	/> -->
+                       <u-input v-model="value" type="text" input-align="right"  placeholder="请输入昵称"/>
                    </view>
                    <view><u-icon name="arrow-right"  size="20" color="#D3D3D3"></u-icon></view>
                </view>
@@ -40,13 +39,6 @@ export default {
         return {
             value:"16728374561",
             
-        }
-    },
-    methods:{
-        tobindMobile(){
-            uni.navigateTo({
-                url:'../user/bindMobile'
-            })    
         }
     }
 }

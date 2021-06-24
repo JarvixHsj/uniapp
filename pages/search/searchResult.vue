@@ -47,9 +47,27 @@
                 </view>
                 <view class="hot-search search-box">
                     <view class="search-box-title">价格区间(元)</view>
-                    
+                    <view class="flex historyData" style="align-items:center">
+                        <view><u-search placeholder="最低价" input-align="center" search-icon="" :show-action="false" v-model="key"></u-search></view>
+                        <view>-</view>
+                        <view><u-search placeholder="最高价" input-align="center"  search-icon=""  :show-action="false" v-model="key"></u-search></view>
+                    </view>
+                    <view class="flex historyData flex-wrap flex-justify-between">
+                        <view  class="historyItem" style="margin:10rpx;color:#323233">
+                            只看有库存
+                        </view>
+                    </view>
+                </view>
+                <view style="position:fixed;left:0px;bottom:68rpx;width:100%;border-top:1px solid rgba(247,248,250,1);" class="flex">
+                    <view style="margin:32rpx 16rpx 32rpx 32rpx; flex:0 0 30%">
+                        <u-button shape="circle">重置</u-button>
+                    </view>
+                    <view style="margin:32rpx 32rpx 32rpx 16rpx;flex:0 0 55%">
+                        <u-button shape="circle">确定</u-button>
+                    </view>
                 </view>
             </view>
+            
         </u-popup>     
     </view>
 </template>
@@ -61,6 +79,7 @@ export default {
             list:[
                 "新品","销量","价格","筛选"
             ], 
+            key:"",
             keyword:'nike',
             goodData:[
                 {

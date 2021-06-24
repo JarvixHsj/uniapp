@@ -34,7 +34,7 @@
 				</view>
 
 			</view>
-			<view class="recommend_r">
+			<view class="recommend_r" @click="toAllClass">
 				<image :src="imageUrl+ 'ic_filter2.png'" mode=""
 					style="width: 32rpx; height: 32rpx; margin-right: 4rpx;"></image>
 				分类
@@ -42,7 +42,7 @@
 		</view>
 
 		<!-- 切换部分 -->
-		<view class="cut">
+		<view class="cut" v-if="!firstClass">
 			<!-- 轮播 -->
 			<view class="wrap">
 				<u-swiper :list="listSw" mode='dot' border-radius=24 height=280></u-swiper>
@@ -79,9 +79,12 @@
 				</view>
 			</view>
 		</view>
-
+		<!-- 一级分类 -->
+		<view class="cut" v-else>
+			<class-item :classData="classData"></class-item>
+		</view>
 		<!-- 周边商店 -->
-		<view class="shop">
+		<view class="shop" :style="firstClass ? 'margin-top:0px':'margin-top:50px'">
 			<view class="shop_l">
 				<text style="color: #323233;font-size: 32rpx; font-weight: 700;">周边商店</text>
 				<text style="color: #969799; font-size: 24rpx; margin-left: 16rpx;">优质好店</text>
@@ -183,13 +186,15 @@
 
 <script>
 	import app from '../../App.vue'
-	import GoodItem from '../../components/GoodItem'
+	import GoodItem from '@/components/GoodItem'
+	import ClassItem from "@/components/ClassItem"
 	export default {
 		data() {
 			return {
 				imageUrl: app.globalData.imageUrl,
 				title: 'Hello',
 				state: 0,
+				firstClass:false,//显示一级分类
 				list: [
 					'推荐',
 					'时尚运动',
@@ -234,11 +239,34 @@
                     originalPrice:""
                 }
 
-            ]
+            	],
+				classData:[
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+					{title:'热门分类',src:"https://cdn.uviewui.com/uview/swiper/2.jpg"},
+				]
 			}
 		},
 		components:{
 			GoodItem,
+			ClassItem
 		},
 		onLoad() {
 
@@ -254,10 +282,21 @@
 			getState(i) {
 				let that = this;
 				that.state = i;
+				if(i){
+					this.firstClass = true
+				}
+				else{
+					this.firstClass = false
+				}
 			},
 			searchIndex(){
 				uni.navigateTo({
 					url:'../search/search'
+				})
+			},
+			toAllClass(){
+				uni.navigateTo({
+					url:'../class/index'
 				})
 			}
 		}

@@ -1,6 +1,6 @@
 <template>
     <view class="userinfo">
-       <u-navbar  title="个人信息" title-size="28" back-icon-size="28">
+       <u-navbar  title="个人信息" title-size="28" back-icon-size="28" :custom-back="toIndex">
            <view class="navbarRight" slot="right">保存</view>
        </u-navbar>
        <view class="info">
@@ -31,6 +31,13 @@ export default {
             value:"KKSD981",
             value1:""
             
+        }
+    },
+    methods:{
+        toIndex(){
+            uni.navigateTo({
+					url:'../index/my'
+				})  
         }
     }
 }

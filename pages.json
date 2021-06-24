@@ -48,6 +48,22 @@
 
 		},
 		{
+			"path": "pages/class/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": true
+			}
+
+		},
+		{
+			"path": "pages/bulk/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": true
+			}
+
+		},
+		{
             "path" : "pages/login/loginPassword",
             "style" :                                                                                    
             {
@@ -120,6 +136,14 @@
 		},
 		{
 			"path" : "pages/user/setting",
+            "style" :                                                                                    
+            {
+                "navigationStyle": "custom" ,
+                "enablePullDownRefresh": false
+            }
+		},
+		{
+			"path" : "pages/user/bindMobile",
             "style" :                                                                                    
             {
                 "navigationStyle": "custom" ,
